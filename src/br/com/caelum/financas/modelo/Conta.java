@@ -16,6 +16,13 @@ public class Conta {
 	private String numero;
 	private String banco;
 
+	public Conta() {
+	}
+	
+	public Conta(Integer id) {
+		this.id = id;
+	}
+
 	public Integer getId() {
 		return id;
 	}
@@ -56,4 +63,10 @@ public class Conta {
 		this.banco = banco;
 	}
 
+	@Override
+	public String toString() {
+		return "Conta [id=" + id + ", titular=" + titular + ", agencia=" + agencia + ", numero=" + numero + ", banco="
+				+ banco + "]";
+	}
+	
 }
