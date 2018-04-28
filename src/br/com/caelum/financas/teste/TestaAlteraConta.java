@@ -20,7 +20,5 @@ public class TestaAlteraConta {
 		manager.getTransaction().commit();
 		
 		manager.close();
-		
 	}
-	
 }

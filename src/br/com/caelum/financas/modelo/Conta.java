@@ -68,5 +68,4 @@ public class Conta {
 		return "Conta [id=" + id + ", titular=" + titular + ", agencia=" + agencia + ", numero=" + numero + ", banco="
 				+ banco + "]";
 	}
-	
 }
