@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 
 import javax.persistence.EntityManager;
 
+import br.com.caelum.financas.dao.MovimentacaoDAO;
 import br.com.caelum.financas.modelo.Conta;
 import br.com.caelum.financas.modelo.Movimentacao;
 import br.com.caelum.financas.modelo.TipoMovimentacao;
@@ -14,6 +15,7 @@ public class TestaSalvaMovimentacaoComConta {
 	public static void main(String[] args) {
 		
 		EntityManager manager = new JPAUtil().getEntityManager();
+		MovimentacaoDAO movimentacaoDAO = new MovimentacaoDAO(manager);
 		manager.getTransaction().begin();
 		
 		Conta conta = new Conta();
@@ -29,7 +31,7 @@ public class TestaSalvaMovimentacaoComConta {
 		movimentacao.setValor(new BigDecimal("100"));
 		movimentacao.setTipoMovimentacao(TipoMovimentacao.SAIDA);
 		
-		manager.persist(movimentacao);
+		movimentacaoDAO.adiciona(movimentacao);
 		
 		manager.getTransaction().commit();
 		manager.close();
