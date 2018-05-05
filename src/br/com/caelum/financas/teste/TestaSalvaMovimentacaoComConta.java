@@ -1,7 +1,6 @@
 package br.com.caelum.financas.teste;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
 
 import javax.persistence.EntityManager;
 
@@ -26,7 +25,7 @@ public class TestaSalvaMovimentacaoComConta {
 		
 		Movimentacao movimentacao = new Movimentacao();
 		movimentacao.setConta(conta);
-		movimentacao.setData(LocalDateTime.now());
+//		movimentacao.setData(LocalDateTime.now());
 		movimentacao.setDescricao("conta de luz - abril/2010");
 		movimentacao.setValor(new BigDecimal("100"));
 		movimentacao.setTipoMovimentacao(TipoMovimentacao.SAIDA);
